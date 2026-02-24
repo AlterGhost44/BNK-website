@@ -1,0 +1,134 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+// ========== Header / Navbar – układ ==========
+.navbar {
+  max-width: 100%;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  background: $color-white;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  min-height: 56px;
+}
+
+.logo img,
+img.logo {
+    display: block;
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+.toogle_menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 26px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 9px;
+  margin: -9px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1001;
+  box-sizing: content-box;
+}
+
+.toogle_menu span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  border-radius: 2px;
+  transition: transform var(--ease), opacity var(--ease);
+  transform-origin: 50% 50%;
+  background: $color-bg-dark;
+}
+
+// X: oba paski do środka i obrót – 3px+5+3+5+3 = 19px, środek 9.5px
+.toogle_menu.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+  background: rgba(255, 255, 255, 1.0);
+}
+
+.toogle_menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.toogle_menu.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  background: rgba(255, 255, 255, 1.0);
+}
+
+// ========== Menu mobilne – układ ==========
+.nav_mobile {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  transform: translateX(100%);
+  transition: transform var(--ease);
+  z-index: 1000;
+  background: rgba($color-bg-dark, 0.98);
+  color: $color-white;
+  padding: $space-2xl $space-xl;
+}
+
+.nav_mobile a {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $color-white;
+}
+
+.nav_mobile.active {
+  transform: translateX(0);
+}
+
+.nav_desktop {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+}
+
+.nav {
+    min-height: 72px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.toogle_menu {
+  display: none;
+}
+
+.nav_mobile {
+  display: none;
+}
+
+.nav_desktop {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.logo img,
+    img.logo {
+        height: 56px;
+    }
+}

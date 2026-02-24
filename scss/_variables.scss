@@ -1,0 +1,42 @@
+// Kolory
+$color-primary: #1056bf;
+$color-primary-dark: #0131a0;
+$color-primary-light: #5472d3;
+$color-accent: #ff6f00;
+$color-accent-hover: #e65100;
+
+$color-text: #1a1a2e;
+$color-text-muted: #4a4a6a;
+$color-bg: #f8f9fc;
+$color-bg-dark: #0d1117;
+$color-white: #ffffff;
+
+// Typografia
+$font-heading: 'Outfit', sans-serif;
+$font-body: 'DM Sans', sans-serif;
+
+// Breakpointy
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+$bp-wide: 1280px;
+
+// Spacing
+$space-xs: 0.5rem;
+$space-sm: 1rem;
+$space-md: 1.5rem;
+$space-lg: 2rem;
+$space-xl: 3rem;
+$space-2xl: 4rem;
+$space-3xl: 6rem;
+
+// Border radius
+$radius-sm: 6px;
+$radius-md: 12px;
+$radius-lg: 20px;
+$radius-full: 9999px;
+
+// Transitions
+$transition-fast: 0.15s ease;
+$transition-base: 0.25s ease;
+$transition-slow: 0.4s ease;

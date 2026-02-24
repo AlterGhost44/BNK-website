@@ -1,0 +1,131 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.hero {
+  padding: $space-2xl 0;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, rgba($color-primary, 0.03) 0%, rgba($color-primary, 0.08) 100%);
+  position: relative;
+  overflow: hidden;
+  @include respond-to(desktop) {
+    padding: $space-3xl 0;
+    min-height: 90vh;
+  }
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 80%;
+  height: 150%;
+  background: radial-gradient(ellipse, rgba($color-primary, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero__inner {
+  @include container;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $space-xl;
+  @include respond-to(desktop) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: $space-2xl;
+  }
+}
+
+.hero__content {
+  text-align: center;
+  @include respond-to(desktop) {
+    text-align: left;
+  }
+}
+
+.hero__badge {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $color-accent;
+  background: rgba($color-accent, 0.1);
+  padding: $space-xs $space-md;
+  border-radius: $radius-full;
+  margin-bottom: $space-md;
+}
+
+.hero h1 {
+  margin-bottom: $space-md;
+}
+
+.hero h1 strong {
+  color: $color-primary;
+}
+
+.hero__lead {
+  font-size: 1.125rem;
+  color: $color-text-muted;
+  margin-bottom: $space-xl;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  @include respond-to(desktop) {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1.25rem;
+  }
+}
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-md;
+  justify-content: center;
+  @include respond-to(desktop) {
+    justify-content: flex-start;
+  }
+}
+
+.hero__media {
+  position: relative;
+}
+
+.hero__image-wrapper {
+  aspect-ratio: 4/3;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba($color-text, 0.12);
+  background: rgba($color-primary, 0.05);
+}
+
+.hero__image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba($color-primary, 0.08) 0%, rgba($color-primary, 0.04) 100%);
+  color: $color-text-muted;
+  font-size: 0.875rem;
+}
+
+.hero--compact {
+  min-height: auto;
+  padding: $space-xl 0;
+  @include respond-to(desktop) {
+    padding: $space-2xl 0;
+  }
+}

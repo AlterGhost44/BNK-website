@@ -1,0 +1,48 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.layout-container {
+  @include container;
+}
+
+.layout-grid {
+  display: grid;
+  gap: $space-lg;
+  @include respond-to(desktop) {
+    gap: $space-xl;
+  }
+}
+
+.layout-grid--2 {
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.layout-grid--3 {
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.layout-split {
+  display: grid;
+  gap: $space-xl;
+  align-items: center;
+  @include respond-to(desktop) {
+    grid-template-columns: 1fr 1fr;
+    gap: $space-2xl;
+  }
+}
+
+.layout-split--reverse {
+  @include respond-to(desktop) {
+    direction: rtl;
+  }
+}
+
+.layout-split--reverse > * {
+  @include respond-to(desktop) {
+    direction: ltr;
+  }
+}

@@ -1,0 +1,26 @@
+// Variables & mixins
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Base
+@use 'base/reset';
+@use 'base/typography';
+
+// Layout
+@use 'layout/grid';
+@use 'layout/header';
+@use 'layout/footer';
+
+// Components
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/forms';
+
+// Sections (osobny CSS dla każdej sekcji)
+@use 'sections/hero';
+@use 'sections/problem';
+@use 'sections/solutions';
+@use 'sections/process';
+@use 'sections/cta';
+@use 'sections/pricing';
+@use 'sections/contact-section';

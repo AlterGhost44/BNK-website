@@ -1,0 +1,68 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.solutions {
+  @include section-padding;
+  background: $color-bg;
+}
+
+.solutions__inner {
+  @include container;
+}
+
+.solutions .section-title {
+  margin-bottom: $space-xl;
+}
+
+.solutions__grid {
+  display: grid;
+  gap: $space-lg;
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.solutions__card {
+  background: $color-white;
+  border-radius: $radius-lg;
+  padding: $space-xl;
+  box-shadow: 0 4px 24px rgba($color-text, 0.06);
+  border: 1px solid rgba($color-text, 0.06);
+  transition: all $transition-base;
+}
+
+.solutions__card:hover {
+  box-shadow: 0 12px 40px rgba($color-primary, 0.1);
+  transform: translateY(-4px);
+  border-color: rgba($color-primary, 0.2);
+}
+
+.solutions__card-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-dark 100%);
+  color: $color-white;
+  border-radius: $radius-md;
+  font-size: 1.75rem;
+  margin-bottom: $space-md;
+}
+
+.solutions__card h3 {
+  margin-bottom: $space-xs;
+}
+
+.solutions__card p {
+  font-size: 0.9375rem;
+  margin: 0;
+}
+
+.solutions__cta-wrap {
+  text-align: center;
+  margin-top: $space-xl;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Skontaktuj się z nami – bezpłatna wycena strony internetowej. Wypełnij formularz, odezwiemy się w 24h.">
+  <meta name="keywords" content="kontakt, wycena strony, formularz kontaktowy, BNK Studio X">
+  <meta name="author" content="BNK Studio X - Strony internetowe">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://twoja-domena.pl/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kontakt – BNK Studio X Strony internetowe">
+  <meta property="og:description" content="Napisz do nas – bezpłatna wycena i odpowiedź w 24h.">
+  <meta property="og:locale" content="pl_PL">
+  <title>Kontakt | BNK Studio X – Bezpłatna wycena strony internetowej</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T0EF7TEBT4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T0EF7TEBT4');
+</script>
+</head>
+<body>
+  <header class="navbar" role="banner">
+    <div class="nav">
+      <a href="index.html" class="logo" aria-label="BNK Studio X – strona główna">
+        <img src="assets/image/Logo.avif" alt="BNK Studio X" loading="lazy">
+      </a>
+
+      <nav class="nav_desktop" aria-label="Nawigacja główna">
+        <a href="index.html">Strona główna</a>
+        <a href="offer.html" aria-current="page">Oferta</a>
+        <a href="contact.html" class="btn btn--primary nav-cta">Kontakt</a>
+      </nav>
+
+      <button type="button" class="toogle_menu" aria-expanded="false" aria-controls="mobile-nav" aria-label="Otwórz menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    <nav id="mobile-nav" class="nav_mobile" aria-label="Menu mobilne" hidden>
+      <a href="index.html">Strona główna</a>
+      <a href="offer.html">Oferta</a>
+      <a href="contact.html" class="btn btn--primary btn--block">Kontakt</a>
+    </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+      <div class="contact-section__inner">
+        <div class="contact-section__info">
+          <h1 id="contact-heading">Napisz do nas – wycena w 24h</h1>
+          <p>Opowiedz krótko o swoim projekcie. Przygotujemy bezpłatną wycenę i odezwiemy się w ciągu jednego dnia roboczego.</p>
+          <div class="contact-section__details">
+            <p>📧 <a href="mailto:kontakt@twoja-domena.pl">kontakt@twoja-domena.pl</a></p>
+            <p>📞 <a href="tel:+48123456789">+48 123 456 789</a></p>
+          </div>
+          <div class="contact-section__image">
+            <!-- Zamień na: <img src="images/contact.jpg" alt="Zespół BNK Studio X przy pracy" width="600" height="375" loading="lazy"> -->
+            <div class="contact-section__image-placeholder">Zdjęcie: contact.jpg</div>
+          </div>
+        </div>
+        <div class="contact-section__form-wrap">
+          <h2>Formularz kontaktowy</h2>
+          <form class="contact-section__form" action="#" method="post" novalidate>
+            <div class="form-group">
+              <label for="name" class="form-label">Imię i nazwisko / Firma <span class="required">*</span></label>
+              <input type="text" id="name" name="name" class="form-input" required placeholder="np. Jan Kowalski" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">E-mail <span class="required">*</span></label>
+              <input type="email" id="email" name="email" class="form-input" required placeholder="np. jan@firma.pl" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="phone" class="form-label">Telefon</label>
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="np. +48 123 456 789" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="pakiet" class="form-label">Interesujący pakiet</label>
+              <select id="pakiet" name="pakiet" class="form-select">
+                <option value="">Wybierz pakiet (opcjonalnie)</option>
+                <option value="basic">Basic – 800 zł</option>
+                <option value="standard">Standard – 1500 zł</option>
+                <option value="premium">Premium – 3000 zł</option>
+                <option value="indywidualna">Indywidualna wycena</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Opis projektu / Pytanie <span class="required">*</span></label>
+              <textarea id="message" name="message" class="form-textarea" required placeholder="Opowiedz, czego potrzebujesz: rodzaj strony, branża, termin..." rows="5"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-checkbox">
+                <input type="checkbox" name="rodo" required>
+                <span>Wyrażam zgodę na przetwarzanie moich danych osobowych w celu odpowiedzi na zapytanie (zgodnie z RODO). <span class="required">*</span></span>
+              </label>
+            </div>
+            <button type="submit" class="btn btn--accent btn--large">Wyślij wiadomość – czekam na wycenę</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="site-logo">BNK Studio X</span>
+          <p>Profesjonalne strony internetowe dla firm. Widoczność w sieci i więcej klientów.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Stopka – oferta">
+          <h4>Nawigacja</h4>
+          <ul>
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="offer.html">Oferta</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Stopka – kontakt">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="contact.html">Formularz kontaktowy</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 BNK Studio X. Wszystkie prawa zastrzeżone.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

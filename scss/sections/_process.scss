@@ -1,0 +1,85 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.process {
+  @include section-padding;
+  background: $color-white;
+}
+
+.process__inner {
+  @include container;
+}
+
+.process .section-title {
+  margin-bottom: $space-2xl;
+}
+
+.process__steps {
+  display: grid;
+  gap: $space-xl;
+  position: relative;
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: $space-lg;
+  }
+}
+
+@include respond-to(desktop) {
+  .process__steps::before {
+    content: '';
+    position: absolute;
+    left: 48px;
+    right: 48px;
+    top: 48px;
+    height: 2px;
+    background: linear-gradient(to right, $color-primary 0%, rgba($color-primary, 0.3) 100%);
+    z-index: 0;
+  }
+}
+
+.process__step {
+  position: relative;
+  text-align: center;
+  padding: $space-lg;
+  background: $color-bg;
+  border-radius: $radius-lg;
+  border: 2px solid rgba($color-primary, 0.1);
+  transition: all $transition-base;
+}
+
+.process__step:hover {
+  border-color: $color-primary;
+  box-shadow: 0 8px 24px rgba($color-primary, 0.12);
+}
+
+.process__step-number {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto $space-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-primary;
+  color: $color-white;
+  font-family: $font-heading;
+  font-weight: 800;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.process__step h3 {
+  font-size: 1.125rem;
+  margin-bottom: $space-xs;
+}
+
+.process__step p {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.process__cta {
+  text-align: center;
+  margin-top: $space-2xl;
+}
