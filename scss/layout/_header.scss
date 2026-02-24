@@ -20,7 +20,7 @@
 .logo img,
 img.logo {
     display: block;
-    height: 80px;
+    height: 60px;
     width: auto;
     object-fit: contain;
 }
@@ -90,6 +90,17 @@ img.logo {
   font-size: 1.25rem;
   font-weight: 600;
   color: $color-white;
+  padding: $space-sm $space-lg;
+  border-radius: $radius-md;
+  text-align: center;
+  width: 100%;
+  max-width: 280px;
+  box-sizing: border-box;
+}
+
+.nav_mobile a:not(.btn)[aria-current="page"] {
+  background: $color-accent;
+  color: $color-white;
 }
 
 .nav_mobile.active {
@@ -121,14 +132,53 @@ img.logo {
 .nav_desktop {
   display: flex;
   flex-direction: row;
-  gap: 0.5rem;
+  gap: $space-lg;
   width: 100%;
   justify-content: flex-end;
   align-items: center;
 }
 
+// Linki tekstowe w nav desktop – osobna klasa (nadpisuje bazowe style linków)
+.nav_desktop__link {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: $color-text;
+  padding: $space-xs 0;
+  text-decoration: none;
+  position: relative;
+  transition: color $transition-base;
+}
+
+.nav_desktop__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: $color-primary;
+  border-radius: $radius-full;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform $transition-base;
+}
+
+.nav_desktop__link:hover {
+  color: $color-primary;
+}
+
+.nav_desktop__link:hover::after,
+.nav_desktop__link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.nav_desktop__link[aria-current="page"] {
+  color: $color-primary;
+}
+
 .logo img,
     img.logo {
-        height: 56px;
+        height: 80px;
     }
 }

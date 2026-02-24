@@ -1,9 +1,8 @@
 # dependencies
 node_modules/
-
-# build output
-css/main.css
 dist/
+build/
+.cache/
 
 # logs
 npm-debug.log*
@@ -20,4 +19,9 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
+.env.production
+
+.netlify/
+
+*.log
 

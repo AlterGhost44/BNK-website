@@ -20,7 +20,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: var(--color-text, #1a1a2e);
-  background-color: var(--color-bg, #f8f9fc);
+  background-color: #e8ecf4;
   max-width: 100vw;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -41,7 +41,6 @@ img {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 ul, ol {
@@ -111,8 +110,8 @@ p {
 .layout-container {
   width: 100%;
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  margin: 0;
+  padding: 1rem;
 }
 @media (min-width: 1024px) {
   .layout-container {
@@ -184,7 +183,7 @@ p {
 .logo img,
 img.logo {
   display: block;
-  height: 80px;
+  height: 60px;
   width: auto;
   object-fit: contain;
 }
@@ -252,6 +251,17 @@ img.logo {
   font-size: 1.25rem;
   font-weight: 600;
   color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  width: 100%;
+  max-width: 280px;
+  box-sizing: border-box;
+}
+
+.nav_mobile a:not(.btn)[aria-current=page] {
+  background: #ff6f00;
+  color: #ffffff;
 }
 
 .nav_mobile.active {
@@ -280,14 +290,47 @@ img.logo {
   .nav_desktop {
     display: flex;
     flex-direction: row;
-    gap: 0.5rem;
+    gap: 2rem;
     width: 100%;
     justify-content: flex-end;
     align-items: center;
   }
+  .nav_desktop__link {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: #1a1a2e;
+    padding: 0.5rem 0;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.25s ease;
+  }
+  .nav_desktop__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: #1056bf;
+    border-radius: 9999px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+  .nav_desktop__link:hover {
+    color: #1056bf;
+  }
+  .nav_desktop__link:hover::after,
+  .nav_desktop__link[aria-current=page]::after {
+    transform: scaleX(1);
+  }
+  .nav_desktop__link[aria-current=page] {
+    color: #1056bf;
+  }
   .logo img,
   img.logo {
-    height: 56px;
+    height: 80px;
   }
 }
 .site-footer {
@@ -300,8 +343,8 @@ img.logo {
 .site-footer__inner {
   width: 100%;
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  margin: 0;
+  padding: 1rem;
 }
 @media (min-width: 1024px) {
   .site-footer__inner {
@@ -716,8 +759,8 @@ img.logo {
 .hero__inner {
   width: 100%;
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  margin: 0;
+  padding: 1rem;
 }
 @media (min-width: 1024px) {
   .hero__inner {
@@ -852,8 +895,8 @@ img.logo {
 .problem__inner {
   width: 100%;
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  margin: 0;
+  padding: 1rem;
 }
 @media (min-width: 1024px) {
   .problem__inner {
@@ -961,14 +1004,14 @@ img.logo {
   }
 }
 .solutions {
-  background: #f8f9fc;
+  background: #e8ecf4;
 }
 
 .solutions__inner {
   width: 100%;
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  margin: 0;
+  padding: 1rem;
 }
 @media (min-width: 1024px) {
   .solutions__inner {
@@ -1052,8 +1095,8 @@ img.logo {
 .process__inner {
   width: 100%;
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  margin: 0;
+  padding: 1rem;
 }
 @media (min-width: 1024px) {
   .process__inner {
@@ -1093,7 +1136,7 @@ img.logo {
   position: relative;
   text-align: center;
   padding: 2rem;
-  background: #f8f9fc;
+  background: #e8ecf4;
   border-radius: 20px;
   border: 2px solid rgba(16, 86, 191, 0.1);
   transition: all 0.25s ease;
@@ -1167,8 +1210,8 @@ img.logo {
 .cta-block__inner {
   width: 100%;
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  margin: 0;
+  padding: 1rem;
 }
 @media (min-width: 1024px) {
   .cta-block__inner {
@@ -1226,14 +1269,14 @@ img.logo {
   }
 }
 .pricing {
-  background: #f8f9fc;
+  background: #e8ecf4;
 }
 
 .pricing__inner {
   width: 100%;
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  margin: 0;
+  padding: 1rem;
 }
 @media (min-width: 1024px) {
   .pricing__inner {
@@ -1358,8 +1401,8 @@ img.logo {
 .contact-section__inner {
   width: 100%;
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  margin: 0;
+  padding: 1rem;
 }
 @media (min-width: 1024px) {
   .contact-section__inner {

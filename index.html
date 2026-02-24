@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+  <script src="js/script.js" defer></script>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T0EF7TEBT4"></script>
 <script>
@@ -35,8 +36,10 @@
       </a>
 
       <nav class="nav_desktop" aria-label="Nawigacja główna">
-        <a href="index.html">Strona główna</a>
-        <a href="offer.html" aria-current="page">Oferta</a>
+        <a href="index.html" class="nav_desktop__link" aria-current="page">Strona główna</a>
+        <a href="offer.html" class="nav_desktop__link">Oferta</a>
+        <a href="case.html" class="nav_desktop__link">Portfolio</a>
+        <a href="faq.html" class="nav_desktop__link">FAQ</a>
         <a href="contact.html" class="btn btn--primary nav-cta">Kontakt</a>
       </nav>
 
@@ -47,8 +50,10 @@
       </button>
 
     <nav id="mobile-nav" class="nav_mobile" aria-label="Menu mobilne" hidden>
-      <a href="index.html">Strona główna</a>
+      <a href="index.html" aria-current="page">Strona główna</a>
       <a href="offer.html">Oferta</a>
+      <a href="case.html">Portfolio</a>
+      <a href="faq.html">FAQ</a>
       <a href="contact.html" class="btn btn--primary btn--block">Kontakt</a>
     </nav>
     </div>
@@ -59,8 +64,8 @@
       <div class="hero__inner">
         <div class="hero__content">
           <span class="hero__badge">Strony internetowe na miarę</span>
-          <h1 id="hero-heading">Twoja firma zasługuje na <strong>stronę, która sprzedaje</strong></h1>
-          <p class="hero__lead">Budujemy nowoczesne, szybkie strony z SEO. Zyskaj widoczność w Google i zamieniaj odwiedzających w klientów.</p>
+          <h1 id="hero-heading">Strony internetowe dla firm, <strong>które chcą realnych zapytań</strong></h1>
+          <p class="hero__lead">Projektujemy szybkie, przemyślane strony sprzedażowe dla lokalnych biznesów. Każdy projekt ma jeden cel - zmienić odwiedzających w klientów.</p>
           <div class="hero__cta">
             <a href="contact.html" class="btn btn--accent btn--large btn--block-mobile">Zamów bezpłatną wycenę →</a>
             <a href="offer.html" class="btn btn--outline btn--large btn--block-mobile">Zobacz pakiety</a>
@@ -80,13 +85,13 @@
         <h2 id="problem-heading" class="section-title">Czy to brzmi znajomo?</h2>
         <div class="problem__grid">
           <div class="problem__content">
-            <h2>Brak strony lub strona, która nie działa, to stracone zlecenia</h2>
-            <p>Klienci szukają Cię w Google. Jeśli Ciebie nie ma – wybierają konkurencję. Stara strona, brak mobilności lub słabe SEO oznaczają mniej zapytań i mniejsze zyski.</p>
+            <h2>Twoja strona nie sprzedaje? To znaczy, że sprzedaje konkurencja</h2>
+            <p>Wielu przedsiębiorców z Torunia posiada stronę, która wygląda poprawnie, ale nie generuje zapytań. Brak widoczności w Google, słabe wezwania do działania i chaotyczna struktura powoduje, że klienci wybierają inne firmy.</p>
             <ul class="problem__list" role="list">
-              <li>Strona jest wolna lub nie wyświetla się na telefonie</li>
-              <li>Nie wiesz, jak dodać treści ani jak poprawić pozycje w Google</li>
-              <li>Wyglądasz mniej wiarygodnie niż konkurencja z nowoczesną stroną</li>
-              <li>Brak formularza lub wyraźnego wezwania do działania</li>
+              <li>Strona nie pojawia wysoko w wynikach wyszukiwania</li>
+              <li>Brak jasnej oferty i wyraźnego CTA</li>
+              <li>Nie działa poprawnie na telefonie</li>
+              <li>Nie wiesz, jak ją samodzielnie edytować</li>
             </ul>
           </div>
           <div class="problem__media">
@@ -103,23 +108,24 @@
       <div class="solutions__inner">
         <h2 id="solutions-heading" class="section-title">
           <span class="subtitle">Rozwiązania</span>
-          Co zyskujesz, współpracując z nami
+          Projektujemy strony internetowe, które pracują na Twój biznes
         </h2>
+        <p>Tworzymy strony internetowe dopasowane do realiów rynku lokalnego. Każdy projekt na analizie potrzeb branży, konkurencji i sposobu, w jaki klienci podejmują decyzje.</p>
         <div class="solutions__grid">
           <article class="solutions__card">
-            <div class="solutions__card-icon" aria-hidden="true">🌐</div>
-            <h3>Strona dopasowana do Ciebie</h3>
-            <p>Nie szablony – projekt stworzony pod Twoją firmę, przekaz i grupę docelową.</p>
+            <div class="solutions__card-icon" aria-hidden="true">📱</div>
+            <h3>Szybkość i responsywność</h3>
+            <p>Nowoczesna, szybka strona działająca bezbłędnie na telefonie, tablecie i komputerze</p>
           </article>
           <article class="solutions__card">
-            <div class="solutions__card-icon" aria-hidden="true">📱</div>
-            <h3>Działanie na każdym urządzeniu</h3>
-            <p>Responsywny design. Strona świetnie wygląda i działa na telefonie, tablecie i komputerze.</p>
+            <div class="solutions__card-icon" aria-hidden="true">🌐</div>
+            <h3>Struktura pod konwersję</h3>
+            <p>Przemyślany układ treści i mocne wezwania do działania zwiększają liczbę zapytań</p>
           </article>
           <article class="solutions__card">
             <div class="solutions__card-icon" aria-hidden="true">🔍</div>
-            <h3>SEO od samego początku</h3>
-            <p>Budujemy stronę z myślą o wyszukiwarkach, żeby klienci mogli Cię znaleźć w Google.</p>
+            <h3>Widoczność w Google</h3>
+            <p>Strona przygotowana pod lokalne SEO, aby Twoja firma była łatwa do znalezienia w Toruniu i okolicach</p>
           </article>
         </div>
         <div class="solutions__cta-wrap">
@@ -132,28 +138,28 @@
       <div class="process__inner">
         <h2 id="process-heading" class="section-title">
           <span class="subtitle">Jak pracujemy</span>
-          Prosty proces współpracy
+          Jasny proces. Zero chaosu.
         </h2>
         <div class="process__steps">
           <div class="process__step">
             <span class="process__step-number" aria-hidden="true">1</span>
-            <h3>Wycenę i ustalenia</h3>
-            <p>Opowiedz, czego potrzebujesz. Dostaniesz wycenę i plan bez zobowiązań.</p>
+            <h3>Bezpłatna wycena i analiza</h3>
+            <p>Poznajemy Twoja firmę i ustalamy zakres projektu</p>
           </div>
           <div class="process__step">
             <span class="process__step-number" aria-hidden="true">2</span>
-            <h3>Projekt i treści</h3>
-            <p>Przygotowujemy układ strony i dopracowujemy z Tobą treści oraz zdjęcia.</p>
+            <h3>Projekt i struktura</h3>
+            <p>Tworzymy koncepcję strony opartą na konwersji.</p>
           </div>
           <div class="process__step">
             <span class="process__step-number" aria-hidden="true">3</span>
-            <h3>Realizacja</h3>
-            <p>Budujemy stronę, testujemy na urządzeniach i wdrażamy SEO.</p>
+            <h3>Wdrożenie i optymalizacja</h3>
+            <p>Budujemy stronę, optymalizujemy technicznie i testujemy działanie</p>
           </div>
           <div class="process__step">
             <span class="process__step-number" aria-hidden="true">4</span>
-            <h3>Wdrożenie i wsparcie</h3>
-            <p>Uruchamiamy stronę, przekazujemy dostęp i pokazujemy, jak z niej korzystać.</p>
+            <h3>Publikacja i wsparcie</h3>
+            <p>Uruchamiamy stronę i zapewniamy wsparcie po wdrożeniu</p>
           </div>
         </div>
         <div class="process__cta">
@@ -184,6 +190,8 @@
           <ul>
             <li><a href="index.html">Strona główna</a></li>
             <li><a href="offer.html">Oferta</a></li>
+            <li><a href="case.html">Portfolio</a></li>
+            <li><a href="faq.html">FAQ</a></li>
             <li><a href="contact.html">Kontakt</a></li>
           </ul>
         </nav>
@@ -199,7 +207,5 @@
       </div>
     </div>
   </footer>
-
-  <script src="js/script.js"></script>
 </body>
 </html>
