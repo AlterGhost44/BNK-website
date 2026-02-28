@@ -66,8 +66,7 @@
           <h1 id="contact-heading">Napisz do nas – wycena w 24h</h1>
           <p>Opowiedz krótko o swoim projekcie. Przygotujemy bezpłatną wycenę i odezwiemy się w ciągu jednego dnia roboczego.</p>
           <div class="contact-section__details">
-            <p>📧 <a href="mailto:kontakt@twoja-domena.pl">kontakt@twoja-domena.pl</a></p>
-            <p>📞 <a href="tel:+48123456789">+48 123 456 789</a></p>
+            <p>📧 <a href="mailto:kontakt@bnkstudiox.com">kontakt@bnkstudiox.com</a></p>
           </div>
           <div class="contact-section__image">
             <!-- Zamień na: <img src="images/contact.jpg" alt="Zespół BNK Studio X przy pracy" width="600" height="375" loading="lazy"> -->
@@ -76,7 +75,8 @@
         </div>
         <div class="contact-section__form-wrap">
           <h2>Formularz kontaktowy</h2>
-          <form class="contact-section__form" action="#" method="post" novalidate>
+          <form class="contact-section__form" method="post" novalidate  data-netlify="true">
+            <input type="hidden" name="form-name" value="contact-form">
             <div class="form-group">
               <label for="name" class="form-label">Imię i nazwisko / Firma <span class="required">*</span></label>
               <input type="text" id="name" name="name" class="form-input" required placeholder="np. Jan Kowalski" autocomplete="name">

@@ -47,5 +47,16 @@
   } catch (e) {
     // cicho ignorujemy w razie braku wsparcia
   }
+
+  // Portfolio: pokazuj „Zobacz szczegóły” przy najechaniu (klasa, żeby hover działał pewnie)
+  var caseItems = document.querySelectorAll('.case-grid__item')
+  caseItems.forEach(function (item) {
+    item.addEventListener('mouseenter', function () {
+      item.classList.add('is-hovered')
+    })
+    item.addEventListener('mouseleave', function () {
+      item.classList.remove('is-hovered')
+    })
+  })
 })()
 

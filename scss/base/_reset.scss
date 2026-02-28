@@ -33,6 +33,14 @@ main {
   overflow-x: hidden;
 }
 
+// Odstęp między headerem a treścią (np. faq, case)
+.main--with-header-offset {
+  padding-top: $space-xl;
+  @media (min-width: 1024px) {
+    padding-top: $space-2xl;
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;

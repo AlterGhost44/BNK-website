@@ -15,8 +15,8 @@
 @mixin container {
   width: 100%;
   max-width: $bp-wide;
-  margin: 0;
-  padding: $space-sm;
+  margin: 0 auto;
+  padding: 0 $space-sm;
   @include respond-to(desktop) {
     padding: 0 $space-xl;
   }

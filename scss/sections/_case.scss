@@ -1,0 +1,180 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+// ——— Intro ———
+.case-intro {
+  @include section-padding;
+  background: $color-white;
+}
+
+.case-intro__inner {
+  @include container;
+  text-align: center;
+}
+
+.case-intro .section-title {
+  margin-bottom: $space-md;
+}
+
+.case-intro__inner > p {
+  margin: 0;
+  color: $color-text-muted;
+  font-size: 1.0625rem;
+  max-width: 50ch;
+  margin-inline: auto;
+  @include respond-to(desktop) {
+    font-size: 1.125rem;
+  }
+}
+
+// ——— Grid portfolio ———
+.case-grid {
+  @include section-padding;
+  background: $color-bg;
+}
+
+// Mobile: kolumna (jedna pod drugą). Desktop: siatka w wiersze (kilka kolumn)
+.case-grid__inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: $space-xl;
+  @include respond-to(desktop) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: $space-2xl;
+  }
+}
+
+.case-grid .visually-hidden {
+  @include visually-hidden;
+}
+
+// Karta = kolumna: nazwa firmy → opis → zdjęcie
+.case-grid__item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  border-radius: $radius-lg;
+  background: $color-white;
+  box-shadow: 0 4px 20px rgba($color-text, 0.06);
+  border: 1px solid rgba($color-text, 0.06);
+  transition: transform $transition-base, box-shadow $transition-base;
+}
+
+.case-grid__item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba($color-text, 0.1);
+}
+
+// Overlay przyciemniający przy hover (żeby biały napis był czytelny)
+.case-grid__item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  border-radius: inherit;
+  transition: background $transition-base;
+}
+
+.case-grid__item:hover::before,
+.case-grid__item.is-hovered::before {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+// Treść karty pod overlayem i CTA
+.case-grid__item h3,
+.case-grid__item p,
+.case-grid__image {
+  position: relative;
+  z-index: 0;
+}
+
+// Nazwa firmy (na górze kolumny)
+.case-grid__item h3 {
+  margin: 0;
+  padding: $space-lg $space-lg $space-xs;
+  font-size: 1.25rem;
+  color: $color-text;
+  order: 1;
+  @include respond-to(desktop) {
+    font-size: 1.375rem;
+    padding: $space-xl $space-xl $space-sm;
+  }
+}
+
+// Opis (pod nazwą)
+.case-grid__item p {
+  margin: 0;
+  padding: 0 $space-lg $space-lg;
+  font-size: 0.9375rem;
+  color: $color-text-muted;
+  line-height: 1.5;
+  order: 2;
+  @include respond-to(desktop) {
+    padding: 0 $space-xl $space-xl;
+    font-size: 1rem;
+  }
+}
+
+// Zdjęcie (na dole kolumny)
+.case-grid__image {
+  order: 3;
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  color: $color-text-muted;
+  background: linear-gradient(135deg, rgba($color-primary, 0.08) 0%, rgba($color-text, 0.04) 100%);
+  overflow: hidden;
+}
+
+.case-grid__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+// „Zobacz szczegóły” – nad overlayem (z-index 10), widoczne tylko przy hover
+.case-grid__cta {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: inline-block;
+  padding: $space-sm $space-lg;
+  font-family: $font-heading;
+  font-weight: 600;
+  font-size: 1rem;
+  color: $color-white;
+  border: 2px solid $color-white;
+  border-radius: $radius-sm;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity $transition-base, visibility $transition-base;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.case-grid__item:hover .case-grid__cta,
+.case-grid__item.is-hovered .case-grid__cta {
+  opacity: 1;
+  visibility: visible;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+@include respond-to(desktop) {
+  .case-grid__cta {
+    font-size: 1.0625rem;
+    padding: $space-md $space-xl;
+  }
+}
