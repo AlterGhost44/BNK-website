@@ -1,22 +1,28 @@
-// Variables & mixins
+// ============================================================
+// BNK Studio X – główny plik SCSS
+// Kolejność: zmienne → mixiny → baza → layout → komponenty → sekcje
+// ============================================================
+
 @use 'variables' as *;
 @use 'mixins' as *;
 
-// Base
+// 1. Baza (reset, typografia, klasy uniwersalne)
 @use 'base/reset';
 @use 'base/typography';
+@use 'base/utilities';
 
-// Layout
+// 2. Layout (siatka, header, footer)
 @use 'layout/grid';
 @use 'layout/header';
 @use 'layout/footer';
 
-// Components
+// 3. Komponenty (przyciski, karty, formularze, cookies)
 @use 'components/buttons';
 @use 'components/cards';
 @use 'components/forms';
+@use 'components/cookie-consent';
 
-// Sections (osobny CSS dla każdej sekcji)
+// 4. Sekcje (strona główna, oferta, kontakt, FAQ, portfolio itd.)
 @use 'sections/hero';
 @use 'sections/problem';
 @use 'sections/solutions';
@@ -26,3 +32,4 @@
 @use 'sections/contact-section';
 @use 'sections/faq';
 @use 'sections/case';
+@use 'sections/portfolio-detail';

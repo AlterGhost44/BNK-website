@@ -29,6 +29,11 @@
   }
 }
 
+// Placeholder do @extend – wspólny padding sekcji (bez duplikacji w CSS)
+%section-base {
+  @include section-padding;
+}
+
 @mixin heading-style {
   font-family: $font-heading;
   font-weight: 700;
@@ -47,3 +52,5 @@
   white-space: nowrap;
   border: 0;
 }
+
+

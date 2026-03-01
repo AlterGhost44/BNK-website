@@ -3,7 +3,7 @@
 
 // ——— Intro ———
 .case-intro {
-  @include section-padding;
+  @extend %section-base;
   background: $color-white;
 }
 
@@ -29,7 +29,7 @@
 
 // ——— Grid portfolio ———
 .case-grid {
-  @include section-padding;
+  @extend %section-base;
   background: $color-bg;
 }
 
@@ -124,7 +124,7 @@
 // Zdjęcie (na dole kolumny)
 .case-grid__image {
   order: 3;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   width: 100%;
   display: flex;
   align-items: center;

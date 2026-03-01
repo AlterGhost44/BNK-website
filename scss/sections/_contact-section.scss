@@ -2,7 +2,7 @@
 @use '../mixins' as *;
 
 .contact-section {
-  @include section-padding;
+  @extend %section-base;
   background: $color-white;
 }
 

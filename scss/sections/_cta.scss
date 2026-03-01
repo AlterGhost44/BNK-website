@@ -2,7 +2,7 @@
 @use '../mixins' as *;
 
 .cta-block {
-  @include section-padding;
+  @extend %section-base;
   background: linear-gradient(135deg, $color-primary 0%, $color-primary-dark 100%);
   color: $color-white;
   text-align: center;

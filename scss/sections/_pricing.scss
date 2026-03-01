@@ -2,7 +2,7 @@
 @use '../mixins' as *;
 
 .pricing {
-  @include section-padding;
+  @extend %section-base;
   background: $color-bg;
 }
 

@@ -132,22 +132,23 @@ img.logo {
 .nav_desktop {
   display: flex;
   flex-direction: row;
-  gap: $space-lg;
+  gap: $space-2xl;
   width: 100%;
   justify-content: flex-end;
   align-items: center;
 }
 
-// Linki tekstowe w nav desktop – osobna klasa (nadpisuje bazowe style linków)
+// Linki tekstowe w nav desktop – hover i active tylko na desktopie
 .nav_desktop__link {
   display: inline-block;
   font-weight: 600;
   font-size: 0.9375rem;
   color: $color-text;
-  padding: $space-xs 0;
+  padding: $space-sm $space-md;
   text-decoration: none;
   position: relative;
-  transition: color $transition-base;
+  border-radius: $radius-sm;
+  transition: color $transition-base, background $transition-base;
 }
 
 .nav_desktop__link::after {
@@ -156,7 +157,7 @@ img.logo {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 2px;
+  height: 3px;
   background: $color-primary;
   border-radius: $radius-full;
   transform: scaleX(0);
@@ -166,15 +167,22 @@ img.logo {
 
 .nav_desktop__link:hover {
   color: $color-primary;
+  background: rgba($color-primary, 0.08);
 }
 
-.nav_desktop__link:hover::after,
-.nav_desktop__link[aria-current="page"]::after {
+.nav_desktop__link:hover::after {
   transform: scaleX(1);
 }
 
 .nav_desktop__link[aria-current="page"] {
   color: $color-primary;
+  background: rgba($color-primary, 0.12);
+  font-weight: 700;
+}
+
+.nav_desktop__link[aria-current="page"]::after {
+  transform: scaleX(1);
+  height: 3px;
 }
 
 .logo img,

@@ -2,7 +2,7 @@
 @use '../mixins' as *;
 
 .solutions {
-  @include section-padding;
+  @extend %section-base;
   background: $color-bg;
 }
 
@@ -17,9 +17,6 @@
 .solutions__grid {
   display: grid;
   gap: $space-lg;
-  @include respond-to(desktop) {
-    grid-template-columns: repeat(2, 1fr);
-  }
   @include respond-to(desktop) {
     grid-template-columns: repeat(3, 1fr);
   }

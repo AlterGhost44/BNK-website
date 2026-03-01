@@ -1,0 +1,299 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+// ========== Strona szczegółów projektu (portfolio-p1) ==========
+// Wizualnie pod SEO i konwersję: hierarchia, czytelność, akcent na Wyniki/Rozwiązania
+
+// Hero projektu – układ: na mobile link pod treścią, na desktop obok
+.hero--compact .hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+  @include respond-to(desktop) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-xl;
+  }
+}
+
+.hero--compact .hero__link {
+  flex-shrink: 0;
+  @include respond-to(desktop) {
+    margin-left: $space-md;
+    margin-right: $space-md;
+    padding: 3rem;
+  }
+}
+
+.hero--compact .hero__link .btn {
+  width: 100%;
+  @include respond-to(desktop) {
+    width: auto;
+  }
+}
+
+// Hero projektu – mocniejsza hierarchia
+.main--with-header-offset .hero--compact .hero__badge {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  padding: $space-xs $space-sm;
+}
+
+.main--with-header-offset .hero--compact .hero__lead {
+  line-height: 1.55;
+  font-size: 1.0625rem;
+  @include respond-to(desktop) {
+    font-size: 1.1875rem;
+  }
+}
+
+// Wyśrodkowanie zawartości sekcji od portfolio-client do końca
+.portfolio-client .problem__inner,
+.portfolio-problems .solutions__inner,
+.portfolio-solutions .problem__inner,
+.portfolio-results .solutions__inner,
+.portfolio-tech .problem__inner,
+.portfolio-gallery-section .solutions__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+// Listy wyśrodkowane jako blok (max-width + margin auto)
+.portfolio-client .problem__list,
+.portfolio-problems .portfolio-list,
+.portfolio-solutions .portfolio-list,
+.portfolio-results .portfolio-list,
+.portfolio-tech .portfolio-list {
+  width: 100%;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.portfolio-gallery-section .gallery {
+  width: 100%;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Sekcje – wyraźniejsze tytuły (skanowanie, SEO)
+.portfolio-client .section-title,
+.portfolio-problems .section-title,
+.portfolio-solutions .section-title,
+.portfolio-results .section-title,
+.portfolio-tech .section-title,
+.portfolio-gallery-section .section-title {
+  margin-bottom: $space-xl;
+}
+
+.portfolio-client .subtitle,
+.portfolio-problems .subtitle,
+.portfolio-solutions .subtitle,
+.portfolio-results .subtitle,
+.portfolio-tech .subtitle,
+.portfolio-gallery-section .subtitle {
+  font-size: 0.8125rem;
+  letter-spacing: 0.11em;
+  color: $color-primary;
+  margin-bottom: $space-sm;
+}
+
+// Sekcje budujące zaufanie (Wyniki, Rozwiązania) – delikatne wyróżnienie
+.portfolio-solutions {
+  background: linear-gradient(180deg, rgba($color-primary, 0.02) 0%, $color-white 100%);
+  border-top: 1px solid rgba($color-text, 0.06);
+}
+
+.portfolio-results {
+  background: linear-gradient(180deg, $color-bg 0%, rgba($color-primary, 0.03) 100%);
+  border-top: 1px solid rgba($color-text, 0.06);
+}
+
+.portfolio-client .problem__list li {
+  line-height: 1.5;
+}
+
+// Lista w sekcjach (Problemy, Wyniki) – checkmark, czytelność
+.portfolio-list {
+  margin-top: $space-lg;
+  list-style: none;
+  padding: 0;
+}
+
+.portfolio-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-md;
+  padding: $space-sm 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: $color-text-muted;
+  border-bottom: 1px solid rgba($color-text, 0.08);
+}
+
+.portfolio-list li:last-child {
+  border-bottom: none;
+}
+
+.portfolio-list li::before {
+  content: '✓';
+  color: $color-primary;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+// Rozwiązania – zielone ptaszki (checkmark)
+.portfolio-list--solutions li::before {
+  content: '✓';
+  color: #2e7d32;
+  font-weight: 700;
+}
+
+// Technologie – gwiazdka
+.portfolio-list--tech li::before {
+  content: '★';
+  color: $color-accent;
+  font-weight: 700;
+}
+
+// Galeria – duże zdjęcie główne, pod spodem kafelki (miniatury)
+.portfolio-gallery-section .gallery {
+  margin-top: $space-xl;
+}
+
+.gallery__main {
+  width: 100%;
+  margin-bottom: $space-lg;
+  box-shadow: 0 4px 24px rgba($color-text, 0.08);
+  max-width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.gallery__main-img {
+  max-width: 100%;
+  width: auto;
+  max-height: 500px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.gallery__thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-sm;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(6, 1fr);
+    gap: $space-md;
+  }
+}
+
+.gallery__thumb {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: $radius-sm;
+  overflow: hidden;
+  background: none;
+  cursor: pointer;
+  transition: border-color $transition-base, opacity $transition-base;
+}
+
+.gallery__thumb:hover {
+  opacity: 0.9;
+}
+
+.gallery__thumb.is-active {
+  border-color: $color-primary;
+  box-shadow: 0 0 0 1px $color-primary;
+}
+
+.gallery__thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+// CTA pod galerią – mocne nawołanie na końcu projektu
+.portfolio-cta {
+  @extend %section-base;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-dark 100%);
+  color: $color-white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.portfolio-cta__inner {
+  @include container;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-cta__title {
+  color: $color-white;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  margin: 0 0 $space-md;
+  max-width: 20ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.portfolio-cta__text {
+  color: rgba($color-white, 0.92);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  max-width: 36ch;
+  margin: 0 auto $space-xl;
+  @include respond-to(desktop) {
+    font-size: 1.125rem;
+    margin-bottom: $space-2xl;
+  }
+}
+
+.portfolio-cta__btn {
+  display: inline-block;
+  min-width: 260px;
+  padding: $space-md $space-xl;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  background: $color-accent;
+  color: $color-white;
+  border: none;
+  border-radius: $radius-md;
+  text-decoration: none;
+  text-align: center;
+  transition: background $transition-base, transform $transition-fast;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.portfolio-cta__btn:hover {
+  background: $color-accent-hover;
+  color: $color-white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
