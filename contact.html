@@ -7,11 +7,13 @@
   <meta name="keywords" content="kontakt, wycena strony, formularz kontaktowy, BNK Studio X">
   <meta name="author" content="BNK Studio X - Strony internetowe">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://twoja-domena.pl/contact.html">
+  <link rel="canonical" href="https://bnkstudiox.com/contact.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Kontakt – BNK Studio X Strony internetowe">
   <meta property="og:description" content="Napisz do nas – bezpłatna wycena i odpowiedź w 24h.">
   <meta property="og:locale" content="pl_PL">
+  <meta property="og:url" content="https://bnkstudiox.com/contact.html">
+  <meta name="theme-color" content="#1056bf">
   <title>Kontakt | BNK Studio X – Bezpłatna wycena strony internetowej</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +27,7 @@
   <header class="navbar" role="banner">
     <div class="nav">
       <a href="index.html" class="logo" aria-label="BNK Studio X – strona główna">
-        <img src="assets/image/Logo.avif" alt="BNK Studio X" loading="lazy">
+        <img src="assets/image/Logo.avif" alt="BNK Studio X – strona główna" width="140" height="40" loading="lazy" fetchpriority="low">
       </a>
 
       <nav class="nav_desktop" aria-label="Nawigacja główna">
@@ -67,8 +69,8 @@
         </div>
         <div class="contact-section__form-wrap">
           <h2>Formularz kontaktowy</h2>
-          <form class="contact-section__form" method="post" novalidate  data-netlify="true">
-            <input type="hidden" name="form-name" value="contact-form">
+          <form class="contact-section__form" method="post" action="/thanks.html" novalidate data-netlify="true">
+            <input type="hidden" name="form-name" value="Zapytanie o wycenę/strone">
             <div class="form-group">
               <label for="name" class="form-label">Imię i nazwisko / Firma <span class="required">*</span></label>
               <input type="text" id="name" name="name" class="form-input" required placeholder="np. Jan Kowalski" autocomplete="name">

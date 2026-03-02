@@ -1,0 +1,42 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.thanks-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-lg;
+  background: $color-bg-dark;
+}
+
+.thanks-section {
+  text-align: center;
+}
+
+.thanks-section__box {
+  max-width: 28rem;
+  @include respond-to(desktop) {
+    max-width: 43rem; // ~688px, w zakresie 600–700px
+  }
+  padding: $space-2xl;
+  background: $color-white;
+  border-radius: $radius-lg;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba($color-text, 0.25);
+}
+
+.thanks-section__title {
+  margin: 0 0 $space-md;
+}
+
+.thanks-section__text {
+  font-size: 1.125rem;
+  color: $color-text-muted;
+  margin: 0 0 $space-xl;
+  line-height: 1.5;
+}
+
+.thanks-section .btn {
+  min-width: 240px;
+}

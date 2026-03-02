@@ -48,37 +48,51 @@
   }
 }
 
-// Wyśrodkowanie zawartości sekcji od portfolio-client do końca
+// Układ: z lewej h2, z prawej lista (desktop); na mobile kolumna
 .portfolio-client .problem__inner,
 .portfolio-problems .solutions__inner,
 .portfolio-solutions .problem__inner,
 .portfolio-results .solutions__inner,
 .portfolio-tech .problem__inner,
 .portfolio-gallery-section .solutions__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+  align-items: start;
+  text-align: left;
+  @include respond-to(desktop) {
+    grid-template-columns: minmax(12rem, 280px) 1fr;
+    gap: $space-2xl;
+  }
 }
 
-// Listy wyśrodkowane jako blok (max-width + margin auto)
+// Na desktopie: pierwsza komórka = tytuł (h2), druga = lista / galeria
+.portfolio-client .problem__inner .section-title,
+.portfolio-problems .solutions__inner .section-title,
+.portfolio-solutions .problem__inner .section-title,
+.portfolio-results .solutions__inner .section-title,
+.portfolio-tech .problem__inner .section-title,
+.portfolio-gallery-section .solutions__inner .section-title {
+  margin-bottom: 0;
+}
+
 .portfolio-client .problem__list,
 .portfolio-problems .portfolio-list,
 .portfolio-solutions .portfolio-list,
 .portfolio-results .portfolio-list,
 .portfolio-tech .portfolio-list {
   width: 100%;
-  max-width: 36rem;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
   text-align: left;
 }
 
 .portfolio-gallery-section .gallery {
   width: 100%;
-  max-width: 56rem;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 // Sekcje – wyraźniejsze tytuły (skanowanie, SEO)
@@ -116,6 +130,36 @@
 
 .portfolio-client .problem__list li {
   line-height: 1.5;
+}
+
+// Kontekst projektu – gwiazdka przy li
+.portfolio-client .problem__list li::before {
+  content: '★';
+  color: $color-accent;
+  font-weight: 700;
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  display: block;
+  background: none;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+// Problemy klienta – wykrzyknik przy li
+.portfolio-problems .portfolio-list li::before {
+  content: '!';
+  color: #c62828;
+  font-weight: 700;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(#c62828, 0.1);
+  font-size: 0.875rem;
+  border-radius: $radius-sm;
 }
 
 // Lista w sekcjach (Problemy, Wyniki) – checkmark, czytelność

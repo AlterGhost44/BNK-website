@@ -1820,10 +1820,31 @@ html[data-cookie-consent=rejected] .cookie-consent {
 .portfolio-results .solutions__inner,
 .portfolio-tech .problem__inner,
 .portfolio-gallery-section .solutions__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+  text-align: left;
+}
+@media (min-width: 1024px) {
+  .portfolio-client .problem__inner,
+  .portfolio-problems .solutions__inner,
+  .portfolio-solutions .problem__inner,
+  .portfolio-results .solutions__inner,
+  .portfolio-tech .problem__inner,
+  .portfolio-gallery-section .solutions__inner {
+    grid-template-columns: minmax(12rem, 280px) 1fr;
+    gap: 4rem;
+  }
+}
+
+.portfolio-client .problem__inner .section-title,
+.portfolio-problems .solutions__inner .section-title,
+.portfolio-solutions .problem__inner .section-title,
+.portfolio-results .solutions__inner .section-title,
+.portfolio-tech .problem__inner .section-title,
+.portfolio-gallery-section .solutions__inner .section-title {
+  margin-bottom: 0;
 }
 
 .portfolio-client .problem__list,
@@ -1832,17 +1853,17 @@ html[data-cookie-consent=rejected] .cookie-consent {
 .portfolio-results .portfolio-list,
 .portfolio-tech .portfolio-list {
   width: 100%;
-  max-width: 36rem;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
   text-align: left;
 }
 
 .portfolio-gallery-section .gallery {
   width: 100%;
-  max-width: 56rem;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .portfolio-client .section-title,
@@ -1878,6 +1899,34 @@ html[data-cookie-consent=rejected] .cookie-consent {
 
 .portfolio-client .problem__list li {
   line-height: 1.5;
+}
+
+.portfolio-client .problem__list li::before {
+  content: "★";
+  color: #ff6f00;
+  font-weight: 700;
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  display: block;
+  background: none;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+.portfolio-problems .portfolio-list li::before {
+  content: "!";
+  color: #c62828;
+  font-weight: 700;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(198, 40, 40, 0.1);
+  font-size: 0.875rem;
+  border-radius: 6px;
 }
 
 .portfolio-list {
@@ -2066,6 +2115,50 @@ html[data-cookie-consent=rejected] .cookie-consent {
   color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+.thanks-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #0d1117;
+}
+
+.thanks-section {
+  text-align: center;
+}
+
+.thanks-section__box {
+  max-width: 28rem;
+}
+@media (min-width: 1024px) {
+  .thanks-section__box {
+    max-width: 43rem;
+  }
+}
+.thanks-section__box {
+  padding: 4rem;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(26, 26, 46, 0.25);
+}
+
+.thanks-section__title {
+  margin: 0 0 1.5rem;
+}
+
+.thanks-section__text {
+  font-size: 1.125rem;
+  color: #4a4a6a;
+  margin: 0 0 3rem;
+  line-height: 1.5;
+}
+
+.thanks-section .btn {
+  min-width: 240px;
 }
 
 /*# sourceMappingURL=main.css.map */
