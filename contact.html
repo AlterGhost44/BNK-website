@@ -71,8 +71,9 @@
         </div>
         <div class="contact-section__form-wrap">
           <h2>Formularz kontaktowy</h2>
-          <form class="contact-section__form" id="contact-form" data-ga4-form="contact-main" method="post" action="thanks" novalidate data-netlify="true">
-            <input type="hidden" name="form-name" value="Zapytanie o wycenę/strone">
+          <form name="contact" class="contact-section__form" id="contact-form" data-ga4-form="contact-main" method="post" action="thanks" novalidate data-netlify="true">
+            <input type="hidden" name="form-name" value="contact">
+            <input type="hidden" name="subject" value="Zapytanie o strone - pakiet:{pakiet}">
             <div class="form-group">
               <label for="name" class="form-label">Imię i nazwisko / Firma <span class="required">*</span></label>
               <input type="text" id="name" name="name" class="form-input" required placeholder="np. Jan Kowalski" autocomplete="name">
