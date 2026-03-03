@@ -63,7 +63,7 @@
           <h1 id="contact-heading">Napisz do nas – wycena w 24h</h1>
           <p>Opowiedz krótko o swoim projekcie. Przygotujemy bezpłatną wycenę i odezwiemy się w ciągu jednego dnia roboczego.</p>
           <div class="contact-section__details">
-            <p>📧 <a href="mailto:kontakt@bnkstudiox.com">kontakt@bnkstudiox.com</a></p>
+            <p>📧 <a href="mailto:kontakt@bnkstudiox.com" data-ga4-email="contact-main">kontakt@bnkstudiox.com</a></p>
           </div>
           <div class="contact-section__image">
             <img src="assets/image/contact.avif" alt="Zespół BNK Studio X przy pracy" width="600" height="375" loading="eager" fetchpriority="high">
@@ -71,7 +71,7 @@
         </div>
         <div class="contact-section__form-wrap">
           <h2>Formularz kontaktowy</h2>
-          <form class="contact-section__form" method="post" action="/thanks.html" novalidate data-netlify="true">
+          <form class="contact-section__form" id="contact-form" data-ga4-form="contact-main" method="post" action="/thanks.html" novalidate data-netlify="true">
             <input type="hidden" name="form-name" value="Zapytanie o wycenę/strone">
             <div class="form-group">
               <label for="name" class="form-label">Imię i nazwisko / Firma <span class="required">*</span></label>

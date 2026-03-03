@@ -2201,4 +2201,25 @@ html[data-cookie-consent=rejected] .cookie-consent {
   margin: 0;
 }
 
+@media (max-width: 600px) {
+  .policy-section {
+    padding: 3rem 0;
+  }
+
+  .policy-section .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .policy-title {
+    margin-bottom: 2rem;
+  }
+
+  .policy-item {
+    padding: 1.25rem 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
