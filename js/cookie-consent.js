@@ -1,6 +1,6 @@
 ;(function () {
   var CONSENT_KEY = 'cookie_consent'
-  var GA_ID = 'G-T0EF7TEBT4'
+  var GA_ID = 'G-74ZN33H8Q1'
 
   function getConsent() {
     try {
