@@ -1,0 +1,26 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+// Sekcja: lokalne firmy z Torunia na stronie głównej
+.local-business {
+  @extend %section-base;
+  background: $color-bg;
+}
+
+.local-business__inner {
+  @include container;
+  display: flex;
+  justify-content: center;
+}
+
+.local-business__content {
+  max-width: 40rem;
+  text-align: center;
+}
+
+.local-business__content p {
+  font-size: 1.0625rem;
+  color: $color-text-muted;
+  margin: 0;
+}
+

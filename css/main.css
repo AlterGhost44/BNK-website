@@ -1,9 +1,9 @@
 @charset "UTF-8";
-.portfolio-cta, .case-intro, .case-grid, .faq, .contact-section, .pricing, .cta-block, .process, .solutions, .problem, .section--white, .section--alt {
+.portfolio-cta, .case-intro, .case-grid, .faq, .contact-section, .pricing, .cta-block, .process, .solutions, .local-business, .problem, .section--white, .section--alt {
   padding: 4rem 0;
 }
 @media (min-width: 1024px) {
-  .portfolio-cta, .case-intro, .case-grid, .faq, .contact-section, .pricing, .cta-block, .process, .solutions, .problem, .section--white, .section--alt {
+  .portfolio-cta, .case-intro, .case-grid, .faq, .contact-section, .pricing, .cta-block, .process, .solutions, .local-business, .problem, .section--white, .section--alt {
     padding: 6rem 0;
   }
 }
@@ -1137,6 +1137,37 @@ html[data-cookie-consent=rejected] .cookie-consent {
   font-size: 0.875rem;
 }
 
+.local-business {
+  background: #e8ecf4;
+}
+
+.local-business__inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+@media (min-width: 1024px) {
+  .local-business__inner {
+    padding: 0 3rem;
+  }
+}
+.local-business__inner {
+  display: flex;
+  justify-content: center;
+}
+
+.local-business__content {
+  max-width: 40rem;
+  text-align: center;
+}
+
+.local-business__content p {
+  font-size: 1.0625rem;
+  color: #4a4a6a;
+  margin: 0;
+}
+
 .solutions {
   background: #e8ecf4;
 }
@@ -1487,8 +1518,12 @@ html[data-cookie-consent=rejected] .cookie-consent {
 }
 
 .pricing__cta {
-  text-align: center;
   margin-top: 4rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .contact-section {
