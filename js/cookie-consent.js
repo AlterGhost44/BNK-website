@@ -1,6 +1,5 @@
 ;(function () {
   var CONSENT_KEY = 'cookie_consent'
-  var GA_ID = 'G-T0EF7TEBT4'
 
   function getConsent() {
     try {
@@ -13,74 +12,56 @@
   function setConsent(value) {
     try {
       localStorage.setItem(CONSENT_KEY, value)
-      if (document.documentElement) document.documentElement.dataset.cookieConsent = value
+      document.documentElement.dataset.cookieConsent = value
     } catch (e) {}
-  }
-
-  function loadGA4() {
-    if (window.__ga4Loaded) return
-    window.__ga4Loaded = true
-    window.dataLayer = window.dataLayer || []
-    function gtag() { dataLayer.push(arguments) }
-    window.gtag = gtag
-    gtag('js', new Date())
-    gtag('config', GA_ID)
-    var s = document.createElement('script')
-    s.async = true
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID
-    document.head.appendChild(s)
   }
 
   function hideBanner() {
     var banner = document.getElementById('cookie-consent')
-    if (banner) {
-      banner.hidden = true
-      banner.setAttribute('aria-hidden', 'true')
-    }
+    if (banner) banner.hidden = true
   }
 
   function showBanner() {
     var banner = document.getElementById('cookie-consent')
-    if (banner) {
-      banner.hidden = false
-      banner.removeAttribute('aria-hidden')
+    if (banner) banner.hidden = false
+  }
+
+  function updateConsent(status) {
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        'analytics_storage': status === 'accepted' ? 'granted' : 'denied'
+      });
     }
   }
 
   function init() {
-    var consent = getConsent()
     var banner = document.getElementById('cookie-consent')
+    if (!banner) return
+
+    var consent = getConsent()
 
     if (consent === 'accepted') {
-      loadGA4()
       hideBanner()
+      updateConsent('accepted')
     } else if (consent === 'rejected') {
       hideBanner()
+      updateConsent('rejected')
     } else {
       showBanner()
     }
 
-    if (!banner) return
-
-    banner.querySelectorAll('[data-consent="accept"]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        setConsent('accepted')
-        hideBanner()
-        loadGA4()
-      })
+    banner.querySelector('[data-consent="accept"]').addEventListener('click', function () {
+      setConsent('accepted')
+      hideBanner()
+      updateConsent('accepted')
     })
 
-    banner.querySelectorAll('[data-consent="reject"]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        setConsent('rejected')
-        hideBanner()
-      })
+    banner.querySelector('[data-consent="reject"]').addEventListener('click', function () {
+      setConsent('rejected')
+      hideBanner()
+      updateConsent('rejected')
     })
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init)
-  } else {
-    init()
-  }
+  document.addEventListener('DOMContentLoaded', init)
 })()

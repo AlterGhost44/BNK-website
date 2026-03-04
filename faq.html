@@ -22,7 +22,16 @@
   <link rel="icon" type="image/svg+xml" href="/assets/image/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/image/favicon.png">
   <script src="js/script.js" defer></script>
-  <script src="js/cookie-consent.js"></script>
+  <script src="js/cookie-consent.js" defer></script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SMYSVRB81D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SMYSVRB81D');
+</script>
 </head>
 <body>
   <script>(function(){try{var c=localStorage.getItem('cookie_consent');if(c==='accepted'||c==='rejected')document.documentElement.dataset.cookieConsent=c;}catch(e){}})();</script>
@@ -59,10 +68,10 @@
   <main id="main-content" class="main--with-header-offset">
     <section class="faq" id="faq" aria-labelledby="faq-heading">
       <div class="faq__inner">
-        <h2 id="faq-heading" class="section-title">
+        <h1 id="faq-heading" class="section-title">
           <span class="subtitle">FAQ</span>
           Najczęściej zadawane pytania
-        </h2>
+        </h1>
         <div class="faq__grid">
           <div class="faq__item">
             <h3>Ile kosztuje strona internetowa?</h3>
