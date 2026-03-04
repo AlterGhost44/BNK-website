@@ -177,6 +177,10 @@ p {
   color: #4a4a6a;
 }
 
+.section-title--left {
+  text-align: left;
+}
+
 .layout-container {
   width: 100%;
   max-width: 1280px;
@@ -495,6 +499,50 @@ img.logo {
 .footer-bottom p {
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.875rem;
+  margin: 0;
+}
+
+.local-business {
+  padding: 3rem 0;
+  background: #ffffff;
+}
+
+.local-business__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  gap: 1.5rem;
+}
+@media (min-width: 1024px) {
+  .local-business__inner {
+    padding: 0 3rem;
+    grid-template-columns: 2fr 1.2fr;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+.local-business__content p {
+  max-width: 46ch;
+}
+
+.local-business__meta {
+  padding: 1.5rem 1.75rem;
+  background: #0d1117;
+  color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(13, 17, 23, 0.35);
+}
+
+.local-business__location {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.local-business__note {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.85);
   margin: 0;
 }
 
@@ -1396,8 +1444,11 @@ html[data-cookie-consent=rejected] .cookie-consent {
 }
 
 .pricing__cta {
-  text-align: center;
   margin-top: 4rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contact-section {
@@ -1472,6 +1523,11 @@ html[data-cookie-consent=rejected] .cookie-consent {
   width: 100%;
   padding: 1.5rem;
   font-size: 1.0625rem;
+}
+
+.contact-section__form-hint {
+  padding-top: 1rem;
+  text-align: center;
 }
 
 .contact-section__image {
