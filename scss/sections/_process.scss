@@ -3,7 +3,7 @@
 
 .process {
   @extend %section-base;
-  background: $color-white;
+  background: $color-bg;
 }
 
 .process__inner {
@@ -22,6 +22,10 @@
     grid-template-columns: repeat(4, 1fr);
     gap: $space-lg;
   }
+}
+
+.process__step:nth-child(n) {
+  background: $color-white;
 }
 
 @include respond-to(desktop) {

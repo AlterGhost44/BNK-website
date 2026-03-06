@@ -166,7 +166,7 @@
 .portfolio-list {
   margin-top: $space-lg;
   list-style: none;
-  padding: 0;
+  padding: 1rem;
 }
 
 .portfolio-list li {
@@ -268,7 +268,6 @@
   display: block;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  vertical-align: middle;
 }
 
 // CTA pod galerią – mocne nawołanie na końcu projektu
@@ -340,4 +339,10 @@
   color: $color-white;
   transform: translateY(-2px);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+@media (min-width: 1024px) {
+  .portfolio-list {
+    padding: 5rem;
+  }
 }

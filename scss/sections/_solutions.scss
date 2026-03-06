@@ -8,6 +8,11 @@
 
 .solutions__inner {
   @include container;
+  display: flex;
+  gap: $space-lg;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .solutions .section-title {

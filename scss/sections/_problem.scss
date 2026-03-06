@@ -24,12 +24,10 @@
   }
 }
 
-.problem__content h2 {
-  margin-bottom: $space-md;
-}
-
-.problem__content p {
-  margin-bottom: $space-md;
+.problem__content {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
 }
 
 .problem__list {

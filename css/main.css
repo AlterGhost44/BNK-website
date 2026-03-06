@@ -1062,12 +1062,10 @@ html[data-cookie-consent=rejected] .cookie-consent {
   }
 }
 
-.problem__content h2 {
-  margin-bottom: 1.5rem;
-}
-
-.problem__content p {
-  margin-bottom: 1.5rem;
+.problem__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .problem__list {
@@ -1138,7 +1136,7 @@ html[data-cookie-consent=rejected] .cookie-consent {
 }
 
 .local-business {
-  background: #e8ecf4;
+  background: #ffffff;
 }
 
 .local-business__inner {
@@ -1158,16 +1156,27 @@ html[data-cookie-consent=rejected] .cookie-consent {
 }
 
 .local-business__content {
-  max-width: 40rem;
-  text-align: center;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }
 
 .local-business__content p {
+  text-align: center;
   font-size: 1.0625rem;
   color: #4a4a6a;
   margin: 0;
 }
 
+@media (min-width: 1024px) {
+  .local-business__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
 .solutions {
   background: #e8ecf4;
 }
@@ -1182,6 +1191,13 @@ html[data-cookie-consent=rejected] .cookie-consent {
   .solutions__inner {
     padding: 0 3rem;
   }
+}
+.solutions__inner {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .solutions .section-title {
@@ -1241,7 +1257,7 @@ html[data-cookie-consent=rejected] .cookie-consent {
 }
 
 .process {
-  background: #ffffff;
+  background: #e8ecf4;
 }
 
 .process__inner {
@@ -1270,6 +1286,10 @@ html[data-cookie-consent=rejected] .cookie-consent {
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
   }
+}
+
+.process__step:nth-child(n) {
+  background: #ffffff;
 }
 
 @media (min-width: 1024px) {
@@ -2058,7 +2078,7 @@ html[data-cookie-consent=rejected] .cookie-consent {
 .portfolio-list {
   margin-top: 2rem;
   list-style: none;
-  padding: 0;
+  padding: 1rem;
 }
 
 .portfolio-list li {
@@ -2159,7 +2179,6 @@ html[data-cookie-consent=rejected] .cookie-consent {
   display: block;
   aspect-ratio: 16/10;
   object-fit: cover;
-  vertical-align: middle;
 }
 
 .portfolio-cta {
@@ -2243,6 +2262,11 @@ html[data-cookie-consent=rejected] .cookie-consent {
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
 }
 
+@media (min-width: 1024px) {
+  .portfolio-list {
+    padding: 5rem;
+  }
+}
 .thanks-page {
   min-height: 100vh;
   display: flex;
