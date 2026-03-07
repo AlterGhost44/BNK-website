@@ -28,6 +28,10 @@
 }
 
 .solutions__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background: $color-white;
   border-radius: $radius-lg;
   padding: $space-xl;
