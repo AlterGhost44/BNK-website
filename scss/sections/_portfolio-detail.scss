@@ -55,15 +55,10 @@
 .portfolio-results .solutions__inner,
 .portfolio-tech .problem__inner,
 .portfolio-gallery-section .solutions__inner {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: $space-lg;
-  align-items: start;
-  text-align: left;
-  @include respond-to(desktop) {
-    grid-template-columns: minmax(12rem, 280px) 1fr;
-    gap: $space-2xl;
-  }
+  align-items: center;
 }
 
 // Na desktopie: pierwsza komórka = tytuł (h2), druga = lista / galeria
@@ -119,7 +114,7 @@
 
 // Sekcje budujące zaufanie (Wyniki, Rozwiązania) – delikatne wyróżnienie
 .portfolio-solutions {
-  background: linear-gradient(180deg, rgba($color-primary, 0.02) 0%, $color-white 100%);
+  background: #ffff;
   border-top: 1px solid rgba($color-text, 0.06);
 }
 
@@ -130,6 +125,7 @@
 
 .portfolio-client .problem__list li {
   line-height: 1.5;
+  width: 100%;
 }
 
 // Kontekst projektu – gwiazdka przy li
@@ -172,9 +168,10 @@
 .portfolio-list li {
   display: flex;
   align-items: flex-start;
-  gap: $space-md;
+  gap: $space-xs;
   padding: $space-sm 0;
   font-size: 1rem;
+  width: 100%;
   line-height: 1.5;
   color: $color-text-muted;
   border-bottom: 1px solid rgba($color-text, 0.08);
@@ -299,7 +296,7 @@
 
 .portfolio-cta__title {
   color: $color-white;
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-size: clamp(1.25rem, 4vw, 2rem);
   margin: 0 0 $space-md;
   max-width: 20ch;
   margin-left: auto;
@@ -308,9 +305,9 @@
 
 .portfolio-cta__text {
   color: rgba($color-white, 0.92);
-  font-size: 1.0625rem;
+  font-size: 1rem;
   line-height: 1.5;
-  max-width: 36ch;
+  max-width: 34ch;
   margin: 0 auto $space-xl;
   @include respond-to(desktop) {
     font-size: 1.125rem;
@@ -345,4 +342,25 @@
   .portfolio-list {
     padding: 5rem;
   }
+}
+
+.set_center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+
+  @include respond-to(desktop) {
+    width: 30%;
+  }
+}
+
+.card_case {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.list_layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
